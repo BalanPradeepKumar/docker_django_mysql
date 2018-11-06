@@ -1,0 +1,55 @@
+version: '3.1'
+
+volumes:
+  init-db:
+  data-db:
+
+services:
+  db:
+    restart: always
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+      - ./data-db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysqladmin
+      MYSQL_DATABASE: django_mysql_docker
+    ports:
+      - "3306:3306"
+
+  web:
+    restart: always
+    image: app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/django_mysql_docker
+    ports:
+      - 8000:8000
+    links:
+      - db
+    depends_on:
+      - migration
+
+  migration:
+    build: .
+    image: app
+    command: python manage.py migrate
+    volumes:
+      - .:/django_mysql_docker
+    links:
+      - db
+    depends_on:
+      - make_migrations
+
+  make_migrations:
+    build: .
+    image: app
+    command: python manage.py makemigrations
+    volumes:
+      - .:/django_mysql_docker
+    links:
+      - db
+    depends_on:
+      - db
+
