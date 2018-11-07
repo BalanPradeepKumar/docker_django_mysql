@@ -22,7 +22,7 @@ Install using the following the command,
 
 ### Initializing a fresh instance with MySql dump data
 
-When a container is started for the first time, it will execute files with extensions .sh, .sql and .sql.gz that are found in `init_db`. A new database with the specified name will be created and initialized with the provided configuration variables as described in those files. Files will be executed in alphabetical order. You can easily populate your mysql services by mounting a SQL dump into that directory and provide custom images with contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable in your docker-compose.
+When a container is started for the first time, it will execute files with extensions .sh, .sql and .sql.gz that are found in `init_db`. A new database with the specified name will be created and initialized with the provided configuration variables as described in those files. Files will be executed in alphabetical order. You can easily populate your mysql services by mounting a SQL dump into that directory and provide custom images with contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable in your `docker-compose.yml`.
 
 ### Store MySql data on Host System.
 
@@ -31,8 +31,14 @@ Directory named `data_db` will serve as a MySql data directory on the host syste
 ## Troubleshooting/Issues
 
 Known Issues:
-* Docker volume mapping to local has issues if docker is running in Windows OS. As a quick work around comment volume mapping in `docker-compose.yml` if you are runnning in Windows OS.
+* Docker volume mapping to local has shown issues if docker is running in Windows OS. As a quick work around comment volume mapping in `docker-compose.yml` if you are runnning in Windows OS.
 
+## Support
+
+Reach out to me at one of the following places!
+
+- Twitter at <a href="https://twitter.com/writetopradeep" target="_blank">`@writetopradeep`</a>
+- LinkedIn at <a href="https://www.linkedin.com/in/pradeep-kumar-41653817" target="_blank">`pradeep-kumar-41653817`</a>
 
 ## License
 
