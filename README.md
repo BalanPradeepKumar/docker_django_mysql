@@ -41,7 +41,7 @@ Known Issues:
 Reach out to me at one of the following places!
 
 - Twitter at <a href="https://twitter.com/writetopradeep" target="_blank">`@writetopradeep`</a>
-- LinkedIn at <a href="https://www.linkedin.com/in/pradeep-kumar-41653817" target="_blank">`pradeep-kumar-41653817`</a>
+- LinkedIn at <a href="https://www.linkedin.com/in/balanpradeepkumar/" target="_blank">`balanpradeepkumar`</a>
 
 ## License
 
