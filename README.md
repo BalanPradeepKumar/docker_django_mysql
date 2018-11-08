@@ -11,6 +11,7 @@ A Quick Start Example to run Django-MySql Application in Docker.
 This module requires the following modules/libraries:
 
 * [Docker](https://www.docker.com/get-started)
+* Any version of Linux or Unix OS (Recommended and Optional)
 
 ## Installation
 
@@ -31,7 +32,9 @@ Directory named `data_db` will serve as a MySql data directory on the host syste
 ## Troubleshooting/Issues
 
 Known Issues:
-* Docker volume mapping to local has shown issues if docker is running in Windows OS. As a quick work around comment volume mapping in `docker-compose.yml` if you are runnning in Windows OS.
+#### :warning: Warning running on Windows OS
+* The default Docker setup on Windows uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the MySql database. This means that it is not possible to run a MongoDB container with the data directory mapped to the host on Windows OS.
+* As a quick work around to run this example on windows machine please comment few lines of volume mapping in `docker-compose.yml`. 
 
 ## Support
 
